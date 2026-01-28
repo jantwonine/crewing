@@ -39,8 +39,8 @@
     .cover-page {
       position: relative;
       width: 100%;
-      height: 60vh;
-      background: url('path/to/hero-image.jpg') center/cover no-repeat;
+      height: 55vh;
+      background: linear-gradient(135deg, #003f5c 0%, #1b6b8a 50%, #2a9db3 100%);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -49,26 +49,40 @@
     .cover-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.45);
       animation: fadeInUp 1s;
     }
     .cover-content {
       position: relative;
       text-align: center;
       color: var(--text-light);
-      max-width: 850px;
+      max-width: 900px;
       padding: 1rem;
       animation: fadeInUp 1.2s;
     }
     .cover-content h1 {
       font-family: var(--font-serif);
       font-size: 3rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
     }
     .cover-content p {
-      font-size: 1.15rem;
-      max-width: 820px;
+      font-size: 1.12rem;
+      max-width: 850px;
       margin: 0 auto;
+    }
+    .cover-badges {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
     }
 
     /* NAVIGATION */
@@ -110,7 +124,7 @@
 
     /* LAYOUT */
     .resume-container {
-      max-width: 950px;
+      max-width: 980px;
       margin: 2rem auto;
       display: grid;
       grid-template-columns: 1fr 3fr;
@@ -212,7 +226,7 @@
     @media(max-width:768px) {
       .resume-container { grid-template-columns: 1fr; }
       .sidebar { padding: 1.25rem; }
-      .cover-content h1 { font-size: 2.4rem; }
+      .cover-content h1 { font-size: 2.35rem; }
       .cover-content p { font-size: 1.05rem; }
     }
 
@@ -237,20 +251,26 @@
     <div class="cover-content">
       <h1>Hi, I’m Jantonign “Jan” Reyes</h1>
       <p>
-        Strategic and results driven professional with a blend of communication, business management,
-        and technical automation expertise. I use AI assisted tools, data analytics, and process optimization
-        to deliver actionable insights, streamline workflows, and improve profitability. Open to opportunities
-        where strategy, systems, and communication intersect.
+        Strategic and results driven professional with business management, communications, and automation expertise.
+        I use data analytics and AI assisted tools to improve workflows, reporting, and operational efficiency.
+        Applying for an HR role in a shipping company, with focus on HR operations, reporting, and process improvement.
       </p>
+      <div class="cover-badges" aria-label="Quick focus areas">
+        <span class="badge">HR Operations Support</span>
+        <span class="badge">Employee Reporting</span>
+        <span class="badge">Process Improvement</span>
+        <span class="badge">Stakeholder Management</span>
+      </div>
     </div>
   </section>
 
   <!-- NAVIGATION -->
   <nav aria-label="Resume navigation">
+    <a href="#objective">Objective</a>
     <a href="#summary">Summary</a>
+    <a href="#hrfocus">HR Focus</a>
     <a href="#competencies">Core Competencies</a>
     <a href="#highlights">Highlights</a>
-    <a href="#skills">Skills</a>
     <a href="#education">Education</a>
     <a href="#links">Links</a>
   </nav>
@@ -268,19 +288,9 @@
       <h2>Jantonign “Jan” Reyes</h2>
 
       <div class="contact" aria-label="Contact details">
-        <p><strong>Phone:</strong> (+63) 919 604 1925</p>
+        <p><strong>Phone:</strong> (+63) 919-604-1925</p>
         <p><strong>Email:</strong> <a href="mailto:jantonignsreyes@gmail.com">jantonignsreyes@gmail.com</a></p>
         <p><strong>Location:</strong> Don Bosco, Parañaque City</p>
-      </div>
-
-      <div class="section-block" aria-label="Core competencies sidebar">
-        <h3>Core Competencies</h3>
-        <ul>
-          <li>Business Intelligence and Strategy</li>
-          <li>Operations and Automation</li>
-          <li>Technical Skills and Reporting</li>
-          <li>Communications and Marketing</li>
-        </ul>
       </div>
 
       <div class="section-block" aria-label="Technical skills sidebar">
@@ -295,93 +305,14 @@
         </ul>
       </div>
 
-      <div class="section-block" aria-label="Links sidebar" id="links">
-        <h3>Links</h3>
+      <div class="section-block" aria-label="Core competencies sidebar">
+        <h3>Core Competencies</h3>
         <ul>
-          <li><a href="https://www.linkedin.com/in/jantonignsreyes" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
-          <li><a href="https://jantwonine.github.io/resume/" target="_blank" rel="noopener noreferrer">Resume Website</a></li>
+          <li>Business Intelligence and Strategy</li>
+          <li>Operations and Automation</li>
+          <li>Technical Skills and Reporting</li>
+          <li>Communications and Marketing</li>
         </ul>
       </div>
-    </aside>
 
-    <!-- MAIN CONTENT -->
-    <div class="main-content">
-      <!-- SUMMARY -->
-      <section id="summary">
-        <div class="section-title">Professional Summary</div>
-        <p>
-          Strategic and results driven professional with a blend of communication, business management,
-          and technical automation expertise. Skilled in leveraging AI assisted tools, data analytics, and
-          process optimization to deliver actionable insights, streamline workflows, and improve profitability.
-          Adept at translating complex data into clear narratives, managing client and stakeholder relationships,
-          and driving operational efficiency across diverse industries.
-        </p>
-        <p class="gray">
-          Open to opportunities where strategy, systems, and communication intersect.
-        </p>
-      </section>
-
-      <!-- COMPETENCIES -->
-      <section id="competencies">
-        <div class="section-title">Core Competencies</div>
-        <ul>
-          <li><strong>Business Intelligence and Strategy:</strong> Data analysis, dashboards, market research, ROI analysis</li>
-          <li><strong>Operations and Automation:</strong> Process optimization, system integration, project management, workflow design</li>
-          <li><strong>Technical Skills:</strong> Power BI, Tableau, SQL (Basic), MS Excel (Advanced), HTML/CSS, AI assisted development</li>
-          <li><strong>Communications and Marketing:</strong> Client relations, stakeholder management, trade marketing, content development</li>
-        </ul>
-      </section>
-
-      <!-- HIGHLIGHTS -->
-      <section id="highlights">
-        <div class="section-title">Professional Highlights</div>
-
-        <div class="subhead">Data and Automation</div>
-        <ul>
-          <li><strong>AI Automated Reporting:</strong> Built AI assisted tools to automate financial, customer, and employee reports, reducing manual processing time by 40% and enabling real time strategic insights.</li>
-          <li><strong>System Streamlining and Integration:</strong> Integrated disparate systems to improve data flow and operations, resulting in a 15% boost in overall efficiency.</li>
-          <li><strong>Profitability Analysis:</strong> Conducted deep dive analyses of business and customer data to identify profitability drivers and guide decision making for independent ventures.</li>
-          <li><strong>Full Stack Development:</strong> Designed and deployed functional dashboards and e commerce websites for small businesses, managing projects from needs analysis to deployment.</li>
-        </ul>
-
-        <div class="subhead">Operations and Client Management</div>
-        <ul>
-          <li><strong>General Administration Analyst:</strong> Assessed and improved administrative workflows, enhancing efficiency and resource allocation.</li>
-          <li><strong>Customer and System Specialist:</strong> Streamlined support processes based on customer data insights, reducing average resolution time.</li>
-          <li><strong>Account Executive:</strong> Managed accounts and client relationships, applying strategic communication and business acumen to boost sales and strengthen partnerships.</li>
-        </ul>
-
-        <div class="subhead">Communications and Marketing</div>
-        <ul>
-          <li><strong>Radio (Writer/Producer/Reporter):</strong> Produced and delivered news segments, demonstrating research, storytelling, and deadline management.</li>
-          <li><strong>Trade Marketing Officer:</strong> Analyzed sales data and market trends to craft and execute channel strategies, driving measurable increases in market share.</li>
-        </ul>
-      </section>
-
-      <!-- SKILLS (DETAIL) -->
-      <section id="skills">
-        <div class="section-title">Skills Snapshot</div>
-        <ul>
-          <li>Data analysis and dashboarding</li>
-          <li>Process optimization and workflow design</li>
-          <li>Stakeholder and client management</li>
-          <li>Reporting automation using AI assisted tools</li>
-          <li>Basic SQL and advanced Excel</li>
-          <li>Website and dashboard builds using HTML and CSS</li>
-        </ul>
-      </section>
-
-      <!-- EDUCATION -->
-      <section id="education">
-        <div class="section-title">Education</div>
-        <p><strong>Master of Business Administration</strong> (in progress)<br/>Central Colleges of the Philippines</p>
-        <p><strong>Bachelor of Arts in Mass Communication</strong><br/>Far Eastern University</p>
-      </section>
-    </div>
-  </div>
-
-  <footer style="text-align:center;padding:1rem;color:var(--accent-dark);">
-    &copy; 2025 Jantonign Reyes. All rights reserved.
-  </footer>
-</body>
-</html>
+      <div class="sec
