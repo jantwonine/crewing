@@ -39,8 +39,8 @@
     .cover-page {
       position: relative;
       width: 100%;
-      height: 55vh;
-      background: linear-gradient(135deg, #003f5c 0%, #1b6b8a 50%, #2a9db3 100%);
+      height: 60vh;
+      background: url('path/to/hero-image.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -49,7 +49,7 @@
     .cover-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.6);
       animation: fadeInUp 1s;
     }
     .cover-content {
@@ -67,22 +67,8 @@
     }
     .cover-content p {
       font-size: 1.12rem;
-      max-width: 850px;
+      max-width: 860px;
       margin: 0 auto;
-    }
-    .cover-badges {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-    }
-    .badge {
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      padding: 0.35rem 0.6rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
     }
 
     /* NAVIGATION */
@@ -157,7 +143,7 @@
     }
     .sidebar h2 {
       font-family: var(--font-serif);
-      font-size: 1.5rem;
+      font-size: 1.55rem;
       margin-bottom: 0.75rem;
       text-align: center;
       animation: fadeInUp 1.8s;
@@ -251,16 +237,10 @@
     <div class="cover-content">
       <h1>Hi, I’m Jantonign “Jan” Reyes</h1>
       <p>
-        Strategic and results driven professional with business management, communications, and automation expertise.
-        I use data analytics and AI assisted tools to improve workflows, reporting, and operational efficiency.
-        Applying for an HR role in a shipping company, with focus on HR operations, reporting, and process improvement.
+        Results-driven professional with a blend of communication, business management, and automation expertise.
+        I work best in roles that mix people operations, reporting, and process improvement. I’m applying for an HR role
+        in a shipping company where I can support HR operations using data, clear communication, and workflow automation.
       </p>
-      <div class="cover-badges" aria-label="Quick focus areas">
-        <span class="badge">HR Operations Support</span>
-        <span class="badge">Employee Reporting</span>
-        <span class="badge">Process Improvement</span>
-        <span class="badge">Stakeholder Management</span>
-      </div>
     </div>
   </section>
 
@@ -268,10 +248,11 @@
   <nav aria-label="Resume navigation">
     <a href="#objective">Objective</a>
     <a href="#summary">Summary</a>
-    <a href="#hrfocus">HR Focus</a>
     <a href="#competencies">Core Competencies</a>
     <a href="#highlights">Highlights</a>
+    <a href="#skills">Skills</a>
     <a href="#education">Education</a>
+    <a href="#assessments">Assessments</a>
     <a href="#links">Links</a>
   </nav>
 
@@ -293,19 +274,7 @@
         <p><strong>Location:</strong> Don Bosco, Parañaque City</p>
       </div>
 
-      <div class="section-block" aria-label="Technical skills sidebar">
-        <h3>Technical Skills</h3>
-        <ul>
-          <li>Power BI</li>
-          <li>Tableau</li>
-          <li>SQL (Basic)</li>
-          <li>MS Excel (Advanced)</li>
-          <li>HTML and CSS</li>
-          <li>AI Assisted Development</li>
-        </ul>
-      </div>
-
-      <div class="section-block" aria-label="Core competencies sidebar">
+      <div class="section-block" aria-label="Competency blocks">
         <h3>Core Competencies</h3>
         <ul>
           <li>Business Intelligence and Strategy</li>
@@ -315,4 +284,121 @@
         </ul>
       </div>
 
-      <div class="sec
+      <div class="section-block" aria-label="Technical skills">
+        <h3>Technical Skills</h3>
+        <ul>
+          <li>Power BI</li>
+          <li>Tableau</li>
+          <li>SQL (Basic)</li>
+          <li>MS Excel (Advanced)</li>
+          <li>HTML and CSS</li>
+          <li>AI-assisted development</li>
+        </ul>
+      </div>
+
+      <div class="section-block" id="links" aria-label="Links sidebar">
+        <h3>Links</h3>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/jantonignsreyes" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
+          <li><a href="https://jantwonine.github.io/resume/" target="_blank" rel="noopener noreferrer">Resume Website</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+      <!-- OBJECTIVE -->
+      <section id="objective">
+        <div class="section-title">Objective</div>
+        <p>
+          To contribute in an HR role within a shipping company by supporting HR operations through reporting,
+          process improvement, stakeholder coordination, and automation of recurring workflows (people, data, and documentation).
+        </p>
+      </section>
+
+      <!-- SUMMARY -->
+      <section id="summary">
+        <div class="section-title">Professional Summary</div>
+        <p>
+          Strategic and results-driven professional with a rare blend of communication, business management,
+          and technical automation expertise. Skilled in leveraging AI-assisted tools, data analytics, and
+          process optimization to deliver actionable insights, streamline workflows, and improve profitability.
+          Adept at translating complex data into compelling narratives, managing client and stakeholder
+          relationships, and driving operational efficiency across diverse industries. Open to opportunities
+          where strategy, systems, and communication intersect.
+        </p>
+      </section>
+
+      <!-- COMPETENCIES -->
+      <section id="competencies">
+        <div class="section-title">Core Competencies</div>
+        <ul>
+          <li><strong>Business Intelligence and Strategy:</strong> Data analysis, dashboards, market research, ROI analysis</li>
+          <li><strong>Operations and Automation:</strong> Process optimization, system integration, project management, workflow design</li>
+          <li><strong>Technical Skills:</strong> Power BI, Tableau, SQL (Basic), MS Excel (Advanced), HTML/CSS, AI-assisted development</li>
+          <li><strong>Communications and Marketing:</strong> Client relations, stakeholder management, trade marketing, content development</li>
+        </ul>
+      </section>
+
+      <!-- HIGHLIGHTS -->
+      <section id="highlights">
+        <div class="section-title">Professional Highlights</div>
+
+        <div class="subhead">Data and Automation</div>
+        <ul>
+          <li><strong>AI-automated reporting:</strong> Built AI-assisted tools to automate financial, customer, and employee reports, reducing manual processing time by 40% and enabling real-time strategic insights.</li>
+          <li><strong>System streamlining and integration:</strong> Integrated disparate systems to improve data flow and operations, resulting in a 15% boost in overall efficiency.</li>
+          <li><strong>Profitability analysis:</strong> Conducted deep-dive analyses of business and customer data to identify profitability drivers and guide decision-making for independent ventures.</li>
+          <li><strong>Full-stack development:</strong> Designed and deployed functional dashboards and e-commerce websites for small businesses, managing projects from needs analysis to deployment.</li>
+        </ul>
+
+        <div class="subhead">Operations and Client Management</div>
+        <ul>
+          <li><strong>General Administration Analyst:</strong> Assessed and improved administrative workflows, enhancing efficiency and resource allocation.</li>
+          <li><strong>Customer and System Specialist:</strong> Streamlined support processes based on customer data insights, reducing average resolution time.</li>
+          <li><strong>Account Executive:</strong> Managed accounts and client relationships, applying strategic communication and business acumen to boost sales and strengthen partnerships.</li>
+        </ul>
+
+        <div class="subhead">Communications and Marketing</div>
+        <ul>
+          <li><strong>Radio (Writer/Producer/Reporter):</strong> Produced and delivered news segments, showcasing research, storytelling, and deadline management skills.</li>
+          <li><strong>Trade Marketing Officer:</strong> Analyzed sales data and market trends to craft and execute channel strategies, driving measurable increases in market share.</li>
+        </ul>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills">
+        <div class="section-title">Skills Snapshot</div>
+        <ul>
+          <li>Reporting and dashboarding (Power BI, Tableau)</li>
+          <li>Process improvement and workflow design</li>
+          <li>Stakeholder and client management</li>
+          <li>Automation of recurring reports and documentation using AI-assisted tools</li>
+          <li>MS Excel (Advanced) and SQL (Basic)</li>
+          <li>HTML and CSS (resume websites and simple builds)</li>
+        </ul>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education">
+        <div class="section-title">Education</div>
+        <p><strong>Master of Business Administration</strong> (in progress)<br/>Central Colleges of the Philippines</p>
+        <p><strong>Bachelor of Arts in Mass Communication</strong><br/>Far Eastern University</p>
+      </section>
+
+      <!-- ASSESSMENTS -->
+      <section id="assessments">
+        <div class="section-title">Assessments</div>
+        <ul>
+          <li>DISC &amp; Motivators: <a href="https://raw.githubusercontent.com/jantwonine/resume/main/Tonny%20Robins%20DISC%20%26%20Motivators.pdf" target="_blank" rel="noopener noreferrer">View PDF</a></li>
+          <li>PrinciplesYou: <a href="https://raw.githubusercontent.com/jantwonine/resume/main/Ray%20Dalio%20Principles%20You.pdf" target="_blank" rel="noopener noreferrer">View PDF</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <footer style="text-align:center;padding:1rem;color:var(--accent-dark);">
+    &copy; 2025 Jantonign Reyes. All rights reserved.
+  </footer>
+</body>
+</html>
