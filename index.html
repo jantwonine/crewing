@@ -56,7 +56,7 @@
       position: relative;
       text-align: center;
       color: var(--text-light);
-      max-width: 700px;
+      max-width: 850px;
       padding: 1rem;
       animation: fadeInUp 1.2s;
     }
@@ -66,7 +66,9 @@
       margin-bottom: 0.5rem;
     }
     .cover-content p {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
+      max-width: 820px;
+      margin: 0 auto;
     }
 
     /* NAVIGATION */
@@ -80,6 +82,7 @@
       top: 0;
       z-index: 10;
       animation: fadeInUp 1s;
+      flex-wrap: wrap;
     }
     nav a {
       color: var(--text-light);
@@ -107,7 +110,7 @@
 
     /* LAYOUT */
     .resume-container {
-      max-width: 900px;
+      max-width: 950px;
       margin: 2rem auto;
       display: grid;
       grid-template-columns: 1fr 3fr;
@@ -141,31 +144,38 @@
     .sidebar h2 {
       font-family: var(--font-serif);
       font-size: 1.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
+      text-align: center;
       animation: fadeInUp 1.8s;
     }
-    .contact, .section-skills, .section-trainings {
+    .contact, .section-block {
       width: 100%;
-      margin-top: 1.5rem;
+      margin-top: 1.25rem;
       animation: fadeInUp 2s;
     }
     .contact p {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       text-align: center;
       margin-bottom: 0.5rem;
+      word-break: break-word;
     }
-    .section-trainings h3,
-    .section-skills h3 {
+    .sidebar a {
+      color: var(--text-light);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.25);
+    }
+    .sidebar a:hover { color: var(--accent-light); border-bottom-color: transparent; }
+
+    .section-block h3 {
       font-size: 1rem;
       font-weight: 600;
       color: var(--accent-light);
       margin-bottom: 0.5rem;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
-    .section-trainings ul,
-    .section-skills ul { list-style: none; padding-left: 0; }
-    .section-trainings li,
-    .section-skills li { font-size: 0.9rem; margin-bottom: 0.3rem; }
+    .section-block ul { list-style: none; padding-left: 0; }
+    .section-block li { font-size: 0.92rem; margin-bottom: 0.35rem; }
 
     /* MAIN CONTENT */
     .main-content { padding: 1rem; }
@@ -190,14 +200,32 @@
     section { margin-bottom: 2rem; }
     p { margin-bottom: 1rem; }
     ul { list-style: disc; margin-left: 1.25rem; margin-bottom: 1rem; }
-    .role-title { font-size: 1.2rem; font-weight: 600; color: var(--accent-light); margin-top: 1rem; }
-    .gray { color: #555; font-size: 0.9rem; margin-bottom: 0.75rem; }
+    .subhead {
+      font-weight: 600;
+      color: var(--accent-dark);
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .gray { color: #555; font-size: 0.95rem; margin-bottom: 0.75rem; }
 
     /* RESPONSIVE */
     @media(max-width:768px) {
       .resume-container { grid-template-columns: 1fr; }
-      nav { flex-wrap: wrap; }
-      .sidebar { padding: 1rem; }
+      .sidebar { padding: 1.25rem; }
+      .cover-content h1 { font-size: 2.4rem; }
+      .cover-content p { font-size: 1.05rem; }
+    }
+
+    /* PRINT */
+    @media print {
+      nav, .download-btn, .cover-page { display: none !important; }
+      body { background: #fff; }
+      .resume-container {
+        box-shadow: none;
+        margin: 0;
+        max-width: 100%;
+      }
+      .sidebar { border-radius: 0; }
     }
   </style>
 </head>
@@ -207,20 +235,24 @@
   <section class="cover-page" aria-label="Cover">
     <div class="cover-overlay"></div>
     <div class="cover-content">
-      <h1>Hi, I’m Jantonign “Jan”</h1>
-      <p>Dedicated Operations and Crew Logistics Specialist with 6+ years optimizing processes, managing global teams, and ensuring seamless deployments. Ready to enhance vessel readiness and seafarer welfare at Waypoint Shipping.</p>
+      <h1>Hi, I’m Jantonign “Jan” Reyes</h1>
+      <p>
+        Strategic and results driven professional with a blend of communication, business management,
+        and technical automation expertise. I use AI assisted tools, data analytics, and process optimization
+        to deliver actionable insights, streamline workflows, and improve profitability. Open to opportunities
+        where strategy, systems, and communication intersect.
+      </p>
     </div>
   </section>
 
   <!-- NAVIGATION -->
   <nav aria-label="Resume navigation">
-    <a href="#objective">Objective</a>
-    <a href="#trainings">Certifications</a>
+    <a href="#summary">Summary</a>
+    <a href="#competencies">Core Competencies</a>
+    <a href="#highlights">Highlights</a>
     <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#roles">Roles</a>
     <a href="#education">Education</a>
-    <a href="#assessments">Assessments</a>
+    <a href="#links">Links</a>
   </nav>
 
   <!-- DOWNLOAD -->
@@ -233,130 +265,117 @@
     <!-- SIDEBAR -->
     <aside class="sidebar">
       <img src="https://raw.githubusercontent.com/jantwonine/resume/main/JanDP.jpg" alt="Jantonign Reyes" />
-      <h2>Jantonign \"Jan\" Reyes</h2>
-      <div class="contact">
-        <p>Age 33 • Male • Single</p>
-        <p>(+63) 919 604 1925<br>
-           <a href="mailto:jantonignsreyes@gmail.com" style="color:var(--text-light); text-decoration:none;">jantonignsreyes@gmail.com</a></p>
-        <p>Moonwalk, Parañaque City, 1709</p>
+      <h2>Jantonign “Jan” Reyes</h2>
+
+      <div class="contact" aria-label="Contact details">
+        <p><strong>Phone:</strong> (+63) 919 604 1925</p>
+        <p><strong>Email:</strong> <a href="mailto:jantonignsreyes@gmail.com">jantonignsreyes@gmail.com</a></p>
+        <p><strong>Location:</strong> Don Bosco, Parañaque City</p>
       </div>
 
-      <div class="section-trainings">
-        <h3>Certifications</h3>
+      <div class="section-block" aria-label="Core competencies sidebar">
+        <h3>Core Competencies</h3>
         <ul>
-          <li>Agile Scrum</li>
-          <li>Intelligent Automation</li>
-          <li>Automation Anywhere PSP</li>
-          <li>Oracle SQL Bootcamp</li>
-          <li>GCP Fundamentals</li>
+          <li>Business Intelligence and Strategy</li>
+          <li>Operations and Automation</li>
+          <li>Technical Skills and Reporting</li>
+          <li>Communications and Marketing</li>
         </ul>
       </div>
 
-      <div class="section-skills">
+      <div class="section-block" aria-label="Technical skills sidebar">
         <h3>Technical Skills</h3>
         <ul>
-          <li>GCP · DOMO · Data Studio</li>
-          <li>Zapier · Notion · Airtable</li>
-          <li>Control-M · Unix · Informatica</li>
+          <li>Power BI</li>
+          <li>Tableau</li>
+          <li>SQL (Basic)</li>
+          <li>MS Excel (Advanced)</li>
+          <li>HTML and CSS</li>
+          <li>AI Assisted Development</li>
         </ul>
-        <h3>Crewing Skills</h3>
+      </div>
+
+      <div class="section-block" aria-label="Links sidebar" id="links">
+        <h3>Links</h3>
         <ul>
-          <li>Crew Logistics & Transport Coordination</li>
-          <li>Visa & Immigration Facilitation</li>
-          <li>Certificate Tracking & Renewals</li>
-          <li>Crew Change Scheduling</li>
-          <li>Stakeholder Liaison (Agents, Ports, Masters)</li>
-          <li>Seafarer Onboarding & Welfare</li>
+          <li><a href="https://www.linkedin.com/in/jantonignsreyes" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
+          <li><a href="https://jantwonine.github.io/resume/" target="_blank" rel="noopener noreferrer">Resume Website</a></li>
         </ul>
       </div>
     </aside>
 
     <!-- MAIN CONTENT -->
     <div class="main-content">
-      <!-- OBJECTIVE -->
-      <section id="objective">
-        <div class="section-title">Objective</div>
-        <p>Operations-focused professional leveraging 6+ years in analytics, process optimization, and stakeholder management. Seeking a Crewing Officer role at Waypoint Shipping to streamline crew logistics, ensure compliance, and enhance seafarer welfare through data-driven solutions.</p>
+      <!-- SUMMARY -->
+      <section id="summary">
+        <div class="section-title">Professional Summary</div>
+        <p>
+          Strategic and results driven professional with a blend of communication, business management,
+          and technical automation expertise. Skilled in leveraging AI assisted tools, data analytics, and
+          process optimization to deliver actionable insights, streamline workflows, and improve profitability.
+          Adept at translating complex data into clear narratives, managing client and stakeholder relationships,
+          and driving operational efficiency across diverse industries.
+        </p>
+        <p class="gray">
+          Open to opportunities where strategy, systems, and communication intersect.
+        </p>
       </section>
 
-      <!-- EXPERIENCE -->
-      <section id="experience">
-        <div class="section-title">Work Experience</div>
-
-        <div>
-          <h4>TELUS International Digital Solutions</h4>
-          <p class="gray">Full-time • Jun 2021 – Sep 2024 (3 yrs 4 mos)</p>
-
-          <div class="role-title">Technology Analyst – EDW (Jun 2023 – Sep 2024)</div>
-          <ul>
-            <li>Provided application support and system monitoring across DOMO, ITSM, Control-M, and GCP, ensuring performance continuity and incident prevention.</li>
-            <li>Managed identity, WebLogic, and cloud environments, including resolution of alerts to minimize downtime.</li>
-            <li>Led end-to-end change and release management, serving as the primary reviewer for MOPs and attending all relevant reviews (POMs, PIRs).</li>
-          </ul>
-
-          <div class="role-title">Business Analyst (Sep 2022 – Jun 2023)</div>
-          <ul>
-            <li>Implemented improved processes by analyzing internal operations and applying best practices to drive service and metric improvements.</li>
-            <li>Defined system specifications and process requirements to enhance customer-facing workflows.</li>
-            <li>Conducted data-driven evaluations of financial, operational, and customer metrics to identify trends and recommend policy and procedural changes.</li>
-            <li>Served as a communication bridge between teams and management, supporting new business initiatives and performance updates.</li>
-          </ul>
-
-          <div class="role-title">General Administration Analyst (Dec 2021 – Sep 2022)</div>
-          <ul>
-            <li>Coordinated policy, program, and budget development across departments, producing regular financial reports and supporting audits.</li>
-            <li>Supervised procurement, payroll, travel reimbursements, and confidential personnel processes.</li>
-            <li>Conducted cost-benefit and forecasting analyses to support financial planning and resource allocation.</li>
-            <li>Designed documentation protocols and SOPs for budget and compliance tracking.</li>
-          </ul>
-
-          <div class="role-title">Sr. Data Analyst (Jun 2021 – Dec 2021)</div>
-          <ul>
-            <li>Led time-sensitive, high-impact data analyses to support strategic initiatives and cross-functional decisions.</li>
-            <li>Supervised and mentored a team of analysts, enhancing report accuracy and consistency.</li>
-            <li>Resolved critical data gaps, improving KPI tracking and dashboard reliability.</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4>Vivo Mobile Tech Inc.</h4>
-          <p class="gray">Full-time • Jun 2018 – June 2021 (2 yrs 9 mos)</p>
-
-          <div class="role-title">Trade Marketing Officer (Sep 2018 – Dec 2021)</div>
-          <ul>
-            <li>Developed and managed trade marketing plans, aligning campaign execution with sales goals.</li>
-            <li>Improved brand presence through in-store promotions, channel-specific strategies, and partner activations.</li>
-            <li>Worked with backend tools (Laravel, MySQL) to support tracking and reporting functions.</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- ROLES -->
-      <section id="roles">
-        <div class="section-title">Relevant Roles</div>
+      <!-- COMPETENCIES -->
+      <section id="competencies">
+        <div class="section-title">Core Competencies</div>
         <ul>
-          <li>Sr. Data Analyst</li>
-          <li>Business Analyst</li>
-          <li>General Administration Analyst</li>
-          <li>Technology Analyst – EDW</li>
-          <li>Trade Marketing Officer</li>
+          <li><strong>Business Intelligence and Strategy:</strong> Data analysis, dashboards, market research, ROI analysis</li>
+          <li><strong>Operations and Automation:</strong> Process optimization, system integration, project management, workflow design</li>
+          <li><strong>Technical Skills:</strong> Power BI, Tableau, SQL (Basic), MS Excel (Advanced), HTML/CSS, AI assisted development</li>
+          <li><strong>Communications and Marketing:</strong> Client relations, stakeholder management, trade marketing, content development</li>
+        </ul>
+      </section>
+
+      <!-- HIGHLIGHTS -->
+      <section id="highlights">
+        <div class="section-title">Professional Highlights</div>
+
+        <div class="subhead">Data and Automation</div>
+        <ul>
+          <li><strong>AI Automated Reporting:</strong> Built AI assisted tools to automate financial, customer, and employee reports, reducing manual processing time by 40% and enabling real time strategic insights.</li>
+          <li><strong>System Streamlining and Integration:</strong> Integrated disparate systems to improve data flow and operations, resulting in a 15% boost in overall efficiency.</li>
+          <li><strong>Profitability Analysis:</strong> Conducted deep dive analyses of business and customer data to identify profitability drivers and guide decision making for independent ventures.</li>
+          <li><strong>Full Stack Development:</strong> Designed and deployed functional dashboards and e commerce websites for small businesses, managing projects from needs analysis to deployment.</li>
+        </ul>
+
+        <div class="subhead">Operations and Client Management</div>
+        <ul>
+          <li><strong>General Administration Analyst:</strong> Assessed and improved administrative workflows, enhancing efficiency and resource allocation.</li>
+          <li><strong>Customer and System Specialist:</strong> Streamlined support processes based on customer data insights, reducing average resolution time.</li>
+          <li><strong>Account Executive:</strong> Managed accounts and client relationships, applying strategic communication and business acumen to boost sales and strengthen partnerships.</li>
+        </ul>
+
+        <div class="subhead">Communications and Marketing</div>
+        <ul>
+          <li><strong>Radio (Writer/Producer/Reporter):</strong> Produced and delivered news segments, demonstrating research, storytelling, and deadline management.</li>
+          <li><strong>Trade Marketing Officer:</strong> Analyzed sales data and market trends to craft and execute channel strategies, driving measurable increases in market share.</li>
+        </ul>
+      </section>
+
+      <!-- SKILLS (DETAIL) -->
+      <section id="skills">
+        <div class="section-title">Skills Snapshot</div>
+        <ul>
+          <li>Data analysis and dashboarding</li>
+          <li>Process optimization and workflow design</li>
+          <li>Stakeholder and client management</li>
+          <li>Reporting automation using AI assisted tools</li>
+          <li>Basic SQL and advanced Excel</li>
+          <li>Website and dashboard builds using HTML and CSS</li>
         </ul>
       </section>
 
       <!-- EDUCATION -->
       <section id="education">
         <div class="section-title">Education</div>
-        <p><strong>MBA</strong>, Central Colleges of the Philippines (2019–2022)</p>
-        <p><strong>BA Mass Communications</strong>, Far Eastern University (2009–2015)</p>
-      </section>
-
-      <!-- ASSESSMENTS -->
-      <section id="assessments">
-        <div class="section-title">Assessments</div>
-        <ul>
-          <li>DISC &amp; Motivators: <a href="https://raw.githubusercontent.com/jantwonine/resume/main/Tonny%20Robins%20DISC%20%26%20Motivators.pdf" target="_blank">View PDF</a></li>
-          <li>Principles You: <a href="https://raw.githubusercontent.com/jantwonine/resume/main/Ray%20Dalio%20Principles%20You.pdf" target="_blank">View PDF</a></li>
-        </ul>
+        <p><strong>Master of Business Administration</strong> (in progress)<br/>Central Colleges of the Philippines</p>
+        <p><strong>Bachelor of Arts in Mass Communication</strong><br/>Far Eastern University</p>
       </section>
     </div>
   </div>
